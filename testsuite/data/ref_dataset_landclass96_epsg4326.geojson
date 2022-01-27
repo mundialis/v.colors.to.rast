@@ -1,0 +1,14 @@
+{
+"type": "FeatureCollection",
+"name": "ref_dataset_landclass96",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "cat": 1, "color": "255:127:0", "classname": "developed", "classnum": 1, "class_Num": 1, "not_existing_categories": "developed" }, "geometry": { "type": "Point", "coordinates": [ -78.670633121417808, 35.786304375667918 ] } },
+{ "type": "Feature", "properties": { "cat": 2, "color": "255:255:0", "classname": "agriculture", "classnum": 2, "class_Num": 2, "not_existing_categories": "agriculture" }, "geometry": { "type": "Point", "coordinates": [ -78.756706458837812, 35.706542224395726 ] } },
+{ "type": "Feature", "properties": { "cat": 3, "color": "200:255:0", "classname": "herbaceous", "classnum": 3, "class_Num": 3, "not_existing_categories": "herbaceous" }, "geometry": { "type": "Point", "coordinates": [ -78.676651605509505, 35.733152188470818 ] } },
+{ "type": "Feature", "properties": { "cat": 4, "color": "0:255:0", "classname": "shrubland", "classnum": 4, "class_Num": 4, "not_existing_categories": "shrubland" }, "geometry": { "type": "Point", "coordinates": [ -78.683878071260196, 35.745421843109469 ] } },
+{ "type": "Feature", "properties": { "cat": 5, "color": "20:130:70", "classname": "forest", "classnum": 5, "class_Num": 5, "not_existing_categories": "forest" }, "geometry": { "type": "Point", "coordinates": [ -78.689570529358562, 35.740387944799906 ] } },
+{ "type": "Feature", "properties": { "cat": 6, "color": "0:191:191", "classname": "water", "classnum": 6, "class_Num": 6, "not_existing_categories": "Wasser" }, "geometry": { "type": "Point", "coordinates": [ -78.677443905845848, 35.740780078894453 ] } },
+{ "type": "Feature", "properties": { "cat": 7, "color": "191:127:63", "classname": "sediment", "classnum": 7, "class_Num": 7, "not_existing_categories": "sediment" }, "geometry": { "type": "Point", "coordinates": [ -78.665234130214046, 35.729837997683795 ] } }
+]
+}
