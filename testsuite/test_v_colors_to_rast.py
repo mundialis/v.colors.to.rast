@@ -78,7 +78,7 @@ class TestVColorsToRast(TestCase):
         self.assertModule(r_colors_out)
         stdout = r_colors_out.outputs.stdout
         self.assertTrue(stdout)
-        self.assertEquals(color, stdout)
+        self.assertEqual(color, stdout)
 
     def set_red_color(self):
         """Set raster color to red"""
@@ -104,7 +104,7 @@ class TestVColorsToRast(TestCase):
         stderr = v_colors_to_rast.outputs.stderr
         self.assertTrue(stderr)
         # test that the right map is mentioned in the error message
-        self.assertEquals(
+        self.assertEqual(
             "Using colors from column <%s>\nColor set\n" % (self.color_column), stderr
         )
         # compare colors
@@ -128,7 +128,7 @@ class TestVColorsToRast(TestCase):
         stderr = v_colors_to_rast.outputs.stderr
         self.assertTrue(stderr)
         # test that the right map is mentioned in the error message
-        self.assertEquals(
+        self.assertEqual(
             "Using colors from column <%s>\nColor set\n" % (self.color_column), stderr
         )
         # compare colors
@@ -152,8 +152,8 @@ class TestVColorsToRast(TestCase):
         stderr = v_colors_to_rast.outputs.stderr
         self.assertTrue(stderr)
         # test that the right map is mentioned in the error message
-        self.assertEquals(
-            "Using colors from column <%s>\nFEHLER: Class <water> is not in reference map <%s>\n"
+        self.assertEqual(
+            "Using colors from column <%s>\nERROR: Class <water> is not in reference map <%s>\n"
             % (self.color_column, self.refmap),
             stderr,
         )
@@ -178,7 +178,7 @@ class TestVColorsToRast(TestCase):
         stderr = v_colors_to_rast.outputs.stderr
         self.assertTrue(stderr)
         # test that the right map is mentioned in the error message
-        self.assertEquals(
+        self.assertEqual(
             "Using colors from column <%s>\nColor set\n" % (self.color_column), stderr
         )
         # compare colors
