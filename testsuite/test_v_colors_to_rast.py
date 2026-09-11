@@ -39,7 +39,9 @@ class TestVColorsToRast(TestCase):
     ref_column_notexisting = "not_existing_categories"
     color_column = "color"
     ref_color = "1 255:127:0\n2 255:255:0\n3 200:255:0\n4 0:255:0\n5 20:130:70\n6 0:191:191\n7 191:127:63\nnv 255:255:255\ndefault 255:255:255\n"
-    red_color = "1 255:255:255\n7 255:0:0\nnv 255:255:255\ndefault 255:255:255\n"
+    red_color = (
+        "1 255:255:255\n7 255:0:0\nnv 255:255:255\ndefault 255:255:255\n"
+    )
     pid_str = str(os.getpid())
     refmap = "refmap_%s" % pid_str
     tmpmap = "map_copy_%s" % pid_str
@@ -105,7 +107,8 @@ class TestVColorsToRast(TestCase):
         self.assertTrue(stderr)
         # test that the right map is mentioned in the error message
         self.assertEqual(
-            "Using colors from column <%s>\nColor set\n" % (self.color_column), stderr
+            "Using colors from column <%s>\nColor set\n" % (self.color_column),
+            stderr,
         )
         # compare colors
         self.compare_color(self.ref_color)
@@ -129,7 +132,8 @@ class TestVColorsToRast(TestCase):
         self.assertTrue(stderr)
         # test that the right map is mentioned in the error message
         self.assertEqual(
-            "Using colors from column <%s>\nColor set\n" % (self.color_column), stderr
+            "Using colors from column <%s>\nColor set\n" % (self.color_column),
+            stderr,
         )
         # compare colors
         self.compare_color(self.ref_color)
@@ -179,7 +183,8 @@ class TestVColorsToRast(TestCase):
         self.assertTrue(stderr)
         # test that the right map is mentioned in the error message
         self.assertEqual(
-            "Using colors from column <%s>\nColor set\n" % (self.color_column), stderr
+            "Using colors from column <%s>\nColor set\n" % (self.color_column),
+            stderr,
         )
         # compare colors
         self.compare_color(self.ref_color)

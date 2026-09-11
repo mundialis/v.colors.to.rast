@@ -61,6 +61,9 @@ import grass.script as grass
 
 
 def get_key(my_dict, val):
+    """
+    Returns the key of a dictionary for a given value.
+    """
     for key, value in my_dict.items():
         if val == value:
             return key
@@ -68,6 +71,9 @@ def get_key(my_dict, val):
 
 
 def main():
+    """
+    Set raster colors to colors from a color_column of a reference vector map.
+    """
 
     # parameters
     referencemap = options["referencemap"]
@@ -106,14 +112,19 @@ def main():
     # String class names
     if not classname_is_int:
         color_dict_vals = [val for key, val in color_dict.items()]
-        map_classes = grass.parse_command("r.category", map=map, separator="pipe")
+        map_classes = grass.parse_command(
+            "r.category", map=map, separator="pipe"
+        )
         for mc in map_classes:
             if "|" not in mc:
-                grass.fatal(_("Classes have no category labels in map <%s>") % (map))
+                grass.fatal(
+                    _("Classes have no category labels in map <%s>") % (map)
+                )
             classnum, classname = mc.split("|")
             if classname == "":
                 grass.fatal(
-                    _("Class <%s> has no category label in map <%s>") % (classnum, map)
+                    _("Class <%s> has no category label in map <%s>")
+                    % (classnum, map)
                 )
             elif classname not in color_dict_vals:
                 grass.fatal(
@@ -125,7 +136,8 @@ def main():
 
     # modify the color table:
     colors_str = [
-        "%s %s" % (val, key.replace(":", " ")) for key, val in color_dict.items()
+        "%s %s" % (val, key.replace(":", " "))
+        for key, val in color_dict.items()
     ]
     bc = grass.feed_command("r.colors", quiet=True, map=map, rules="-")
     bc.stdin.write(grass.encode("\n".join(colors_str)))
