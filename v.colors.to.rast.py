@@ -61,6 +61,9 @@ import grass.script as grass
 
 
 def get_key(my_dict, val):
+    """
+    Returns the key of a dictionary for a given value.
+    """
     for key, value in my_dict.items():
         if val == value:
             return key
@@ -68,6 +71,9 @@ def get_key(my_dict, val):
 
 
 def main():
+    """
+    Set raster colors to colors from a color_column of a reference vector map.
+    """
 
     # parameters
     referencemap = options["referencemap"]
